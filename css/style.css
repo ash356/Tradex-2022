@@ -1,6 +1,11 @@
 *{
     font-family: "Open Sans", sans-serif;
 }
+html,
+body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
 .bg-black{
     background-color: #1a1a1a !important;
 }
@@ -355,8 +360,8 @@ li{
     .home .carousel img {
         height: 1200px !important;
     }
-    .home .contact-content img {
-        height: 400px !important;
+    .home .carousel .image {
+        height: 390px !important;
     }
     .home .carousel-caption {
         margin-bottom: 55% !important;
