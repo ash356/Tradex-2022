@@ -32,6 +32,71 @@
         border: 1px solid var(--blue);
         padding: 5px;
       }
+      .scroll-progress {
+       
+        background-color: red;
+        height: 5px;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+       /* box-shadow: inset 0 0 5px rgb(9, 9, 9); */
+        border-radius: 0px;
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: red; 
+        border-radius: 0px;
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b30000; 
+      }
+      .btn{
+        color: #000;
+        background-color: red;
+        padding: 10px; 
+    }
+    
+      .btn:hover{
+        border: 1px solid #071982;
+        background-color: #80ffd3;
+    }
+    .btn{
+      border-radius: 50px;
+      text-transform: capitalize;
+      line-height: 1;
+      font-weight: 600;
+      transition: all .3s ease;
+      overflow: hidden;
+      position: relative;
+      z-index: 0;
+    }
+    .btn:after {
+      background: #fff;
+      content: "";
+      height: 155px;
+      left: -75px;
+      opacity: .2;
+      position: absolute;
+      top: -50px;
+      transform: rotate(35deg);
+      transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+      width: 50px;
+      z-index: -1;
+    }
+    .btn:hover:after {
+      left: 120%;
+    }
+    
     </style>
 
     <script>
@@ -39,23 +104,123 @@
       var rot = document.querySelector(":root");
 
       // Create a function for getting a variable value
-     // function myFunction_get() {
-        // Get the styles (properties and values) for the root
-        //var rs = getComputedStyle(rot);
-        // Alert the value of the --blue variable
-        //alert("The value of --blue is: " + rs.getPropertyValue("--blue"));
-     // }
+      // function myFunction_get() {
+      // Get the styles (properties and values) for the root
+      //var rs = getComputedStyle(rot);
+      // Alert the value of the --blue variable
+      //alert("The value of --blue is: " + rs.getPropertyValue("--blue"));
+      // }
 
       // Create a function for setting a variable value
       function changeColor(color) {
         // Set the value of variable --blue to another value (in this case "lightblue")
         rot.style.setProperty("--main-blue-color", color);
       }
+      // Scrolling Progress
+      /*
+      const scrollProgressElement = document.getElementById("scroll-progress");
+      function scrollProgress() {
+        const totalHeightofWebPage = document.body.scrollHeight;
+        const currentDistanceFromTop = document.documentElement.scrollTop;
+        const windowHeight = document.documentElement.clientHeight;
+        const scrollPercentage = (currentDistanceFromTop / (totalHeightofWebPage - windowHeight)) * 100;
+        const percentage = Math.round(scrollPercentage) + '%';
+        scrollProgressElement.style.width = "5";
+        //scrollProgressElement.style.width= Math.round(scrollPercentage) + '%';
+        console.log(totalHeightofWebPage)
+        console.log(currentDistanceFromTop)
+        console.log(windowHeight)
+        console.log(scrollPercentage)
+        console.log(Math.round(scrollPercentage))
+        console.log("---------------")
+      }
+      document.addEventListener("scroll", scrollProgress);
+      // Scrolling Progress
+      */
+      const scrollline = document.querySelector('.scroll-progress');
+
+      function fillscrollline(){
+        const windowHeight = window.innerHeight;
+        const fullHeight = document.body.clientHeight;
+        const scrolled = window.scrollY;
+        const percentScrolled = (scrolled / (fullHeight - windowHeight)) * 100;
+
+        scrollline.style.width = percentScrolled + '%';
+      };
+
+      window.addEventListener('scroll', fillscrollline);
     </script>
   </head>
   <body>
+    <!-- Start Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <!-- End Scroll Progress -->
     <h1>Get and Change CSS Variable With JavaScript</h1>
 
+    <div class="container">
+      <h2>Lorem Ipsum</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        <button>Yes</button>
+        <button>No</button>
+      </p>
+    </div>
+    <br />
+    <div class="container">
+      <h2>Lorem Ipsum</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        <button>Yes</button>
+        <button>No</button>
+      </p>
+    </div>
+    <br />
+    <div class="container">
+      <h2>Lorem Ipsum</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        <button>Yes</button>
+        <button>No</button>
+      </p>
+    </div>
+    <br />
+    <div class="container">
+      <h2>Lorem Ipsum</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+        diam at erat pulvinar, at pulvinar felis blandit.
+      </p>
+      <p>
+        <button>Yes</button>
+        <button>No</button>
+      </p>
+    </div>
+    <br />
     <div class="container">
       <h2>Lorem Ipsum</h2>
       <p>
@@ -79,6 +244,8 @@
     <button type="button" onclick="changeColor('#1abc9c')">
       Change CSS Variable with JavaScript
     </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" class="btn btn2">Contact Us</a>
     <!-- <button
       class="btn btn-primary"
       type="button"

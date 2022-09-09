@@ -19,6 +19,29 @@ body {
     --color-07:#4f6df5;
     --color-08:#570be1;
 }
+/* Overflow */
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #ffff;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+   /* box-shadow: inset 0 0 5px rgb(9, 9, 9); */
+    border-radius: 0px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--main-blue-color); 
+    border-radius: 0px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7f7f7f; 
+  }
+/* Overflow */
 a{
     text-decoration: none;
     cursor: pointer;
@@ -149,6 +172,24 @@ li{
     background-color: var(--color-08);
 }
 /* Theme */
+/* Button Custom */
+.btn-custom::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(255 255 255 / 50%);
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: 2;
+    border-radius: 50px;
+  }
+.btn-custom:hover::before{
+    animation: flashing 1s;
+}
+/* Button Custom */
   /* Start Header */
   .offcanvas.offcanvas-top {
     top: 100%;
@@ -282,6 +323,16 @@ li{
     box-shadow: 0 0 20px -7px rgb(0 0 0 / 40%);
 }
 /* End Header */
+/* Scroll Progress */
+.scroll-progress { 
+    background-color: var(--main-blue-color);
+    height: 8px;
+    position: fixed;
+    top: 0;
+    z-index: 3030;
+    left: 0;
+  }
+/* Scroll Progress */
 /* Start Home */
 .home .carousel-indicators [data-bs-target] {
     width: 10px;
@@ -316,11 +367,14 @@ li{
     font-weight: 400;
     max-width: 100%;
     margin: 0 auto 30px;
+    /* -webkit-animation: 1s .3s zoomInRight both; */
+    animation: 1s 0.3s zoomInRight both;
 }
 .home .carousel-caption p {
     max-width: 600px;
     font-size: 18px;
     margin: 0 auto 30px;
+    animation: 1s 0.3s zoomInRight both;
 }
 
 .home .contact-content {
@@ -376,6 +430,7 @@ li{
 }
 .home .carousel-caption .b{
     margin-top: 5%;
+    
 }
 .home .carousel-caption .btn{
     padding: 10px 25px 10px;
@@ -384,7 +439,26 @@ li{
     background-color: var(--main-blue-color);
     border-radius: 50px;
     font-size: 20px;
+    animation: 1s 0.3s slide-up both;
 }
+/* .home .btn:after {
+    background: none;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: 0.4;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: -1;
+  }
+.home .btn:hover:after {
+    left: 120%;
+    z-index: 1;
+    background-color: #ffff;
+  } */
 .home .carousel-caption .btn2{
     border: 2px solid #fff;
     background: none ;
@@ -541,6 +615,8 @@ li{
     background-color: var(--main-blue-color);
     margin-top: 5%;
     border-radius: 50px;
+    position: relative;
+
 }
 /* End About */
 /* services */
@@ -622,6 +698,7 @@ li{
     background-color: var(--main-blue-color);
     border-radius: 50px;
     font-size: 15px;
+    position: relative;
 }
 .ourservices .boxs .box:hover > .hov{
     display: block;
@@ -849,6 +926,7 @@ li{
     font-weight: 800;
     color: white;
     margin: 10% 0;
+    position: relative;
 }
 .pricing .row  .mid{
     box-shadow: 0 0 25px 0 rgb(0 0 0 / 25%);
@@ -885,6 +963,7 @@ li{
     color: white;
     font-weight: bold;
     border: none;
+    position: relative;
 }
 @media (min-width:767px) and (max-width:992px) {
     .subscribe .container h1{
@@ -1189,6 +1268,7 @@ li{
     border-radius: 50px;
     font-size: 18px;
     font-weight: bold;
+    position: relative;
 }
 @media (max-width:992px) and (min-width:767px) {
     .work .btn-custom{
@@ -1325,12 +1405,47 @@ li{
     font-weight: 800;
     color: white;
     margin: 50px 0;
+    position: relative;
 }
 /* Touch */
 /* Animation */
+@keyframes zoomInRight {
+    from {
+        transform: scale(10) translateX(50%);
+        opacity: 0;
+    }
+}
+@keyframes slide-up {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      -o-transform: translateY(100%);
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes flashing {
+    0%,
+    40% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 @keyframes moving-arrow {
     100% {
       transform: translateX(10px);
     }
   }
+/* Animation */
 
