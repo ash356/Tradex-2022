@@ -149,6 +149,31 @@
       };
 
       window.addEventListener('scroll', fillscrollline);
+
+      // 
+      /*
+        let counts=setInterval(updated);
+        let upto=0;
+        function updated(num){
+            var count= document.getElementById("counter");
+            count.innerHTML=++upto;
+            if(upto===100)
+            {
+                clearInterval(counts);
+            }
+        }
+        */
+      // 
+      const numbers =document.querySelectorAll(".number");
+      numbers.forEach((num)=>{
+        const incrementCounter = ()=> {
+          const targetNumber = num.getAttribute('data-target-number');
+          const currentNumber =num.innerHTML;
+          console.log(targetNumber);
+          console.log(currentNumber);
+        };
+        incrementCounter();
+      });
     </script>
   </head>
   <body>
@@ -156,7 +181,12 @@
     <div class="scroll-progress" id="scroll-progress"></div>
     <!-- End Scroll Progress -->
     <h1>Get and Change CSS Variable With JavaScript</h1>
-
+    <div class="number" data-target-number="2222">
+      <!-- counts -->0
+  </div>
+    <div class="number" data-target-number="3333">
+      <!-- counts -->0
+  </div>
     <div class="container">
       <h2>Lorem Ipsum</h2>
       <p>

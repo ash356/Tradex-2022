@@ -66,12 +66,31 @@ const scrollProgressElement = document.getElementById("scroll-progress");
         const windowHeight = document.documentElement.clientHeight;
         const scrollPercentage = (currentDistanceFromTop / (totalHeightofWebPage - windowHeight)) * 100;
         scrollProgressElement.style.width= Math.round(scrollPercentage) + '%';
-        console.log(totalHeightofWebPage)
-        console.log(currentDistanceFromTop)
-        console.log(windowHeight)
-        console.log(scrollPercentage)
-        console.log(Math.round(scrollPercentage))
-        console.log("---------------")
+        // console.log(totalHeightofWebPage)
+        // console.log(currentDistanceFromTop)
+        // console.log(windowHeight)
+        // console.log(scrollPercentage)
+        // console.log(Math.round(scrollPercentage))
+        // console.log("---------------")
       }
 document.addEventListener("scroll", scrollProgress);
 // Scrolling Progress
+// Counter 
+const numbers =document.querySelectorAll(".number");
+      numbers.forEach((num)=>{
+        const incrementCounter = ()=> {
+          const targetNumber = num.getAttribute('data-target-number');
+          const currentNumber = parseInt(num.innerText);
+          // console.log(targetNumber);
+          // console.log(currentNumber);
+          if(currentNumber < targetNumber){
+            num.innerText = Math.floor(currentNumber + targetNumber / 10);
+            setTimeout(incrementCounter , 100);
+          }
+          else{
+            num.innerText = targetNumber;
+          }
+        };
+        incrementCounter();
+      });
+// Counter 

@@ -265,7 +265,7 @@ li{
         width: 752px;
     }
     .bottom .row .list li {
-        margin-right: 3.5%;
+        margin-right: 15px;
     }
   }
   @media (min-width:767px) and (max-width:992px){
@@ -273,6 +273,28 @@ li{
         width: 645px;
     }
   }
+  @media (max-width:767px) {
+    .offcanvas.offcanvas-top {
+        height: 450px !important;
+        max-height: none;
+        left: 55%;
+        width: 180px !important;
+  }
+  .offcanvas-header .list{
+    display:  block !important;
+  }
+  .offcanvas-header .list li{
+    margin: 0 0 20px 0 !important;
+  }
+  
+  .offcanvas-header .btn-close{
+    margin: 0 0 400px 0 !important;
+    font-size: 20px;
+  }
+  .offcanvas-header{
+    padding: 18px 30px 0 0;
+  }
+}
   .bottom .row .list .dropdown:hover .dropdown-content {
     display: flex !important;
   }
