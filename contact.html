@@ -97,7 +97,7 @@
         </div>
       </div>
     </div>
-    <div class="bottom bg-white sticky-top">
+    <div class="bottom bg-white" style="position: sticky; top:0px; width: 100%; z-index: 2020;" onscroll="makeFixed()">
       <div class="container">
         <div class="row">
           <div class="col-12 py-2 py-sm-2 py-md-2 py-lg-4">
@@ -403,68 +403,34 @@
         </div>
       </div>
       <div id="switch" class="theme-box">
-        <div class="styleswitcher-inner">
-          <h6 class="title my-3">Colors</h6>
-          <ul class="colors" style="display: flex; flex-wrap: wrap">
-            <li>
-              <a
-                class="color-1"
-                title="Default Theme"
-                onclick="changeColor('#0c65ed')"
-              ></a>
-            </li>
-            <li>
-              <a
-                class="color-2"
-                title="Pink Theme"
-                onclick="changeColor('#1abc9c')"
-              ></a>
-            </li>
-            <li>
-              <a
-                class="color-3"
-                title="Orange Theme"
-                onclick="changeColor('#ff784b')"
-              ></a>
-            </li>
-            <li>
-              <a
-                class="color-4"
-                title="Green Theme"
-                onclick="changeColor('#6cc000')"
-              ></a>
-            </li>
-            <li>
-              <a
-                class="color-5"
-                title="Red Theme"
-                onclick="changeColor('#f12d2d')"
-              ></a>
-            </li>
-            <li>
-              <a
-                class="color-6"
-                title="Pink Theme"
-                onclick="changeColor('#fc3d6a')"
-              ></a>
-            </li>
-            <li>
-              <a
-                class="color-7"
-                title="Blue Theme"
-                onclick="changeColor('#4f6df5')"
-              ></a>
-            </li>
-            <li>
-              <a
-                class="color-8"
-                title="Purple Theme"
-                onclick="changeColor('#570be1')"
-              ></a>
-            </li>
-          </ul>
-        </div>
-      </div>
+           <div class="styleswitcher-inner"><h6 class="title my-3">Colors</h6>
+            <ul class="colors" style="display: flex;
+            flex-wrap: wrap;">
+              <li>
+                <a class="color-1" title="Default Theme" onclick="changeColor('#1abc9c')"></a>
+              </li>
+              <li>
+                <a class="color-2" title="Blue Theme" onclick="changeColor('#0c65ed')"></a>
+              </li>
+              <li>
+                <a class="color-3" title="Orange Theme" onclick="changeColor('#ff784b')"></a>
+              </li>
+              <li>
+                <a class="color-4" title="Green Theme" onclick="changeColor('#6cc000')"></a>
+              </li>
+              <li>
+                <a class="color-5" title="Red Theme" onclick="changeColor('#f12d2d')"></a>
+              </li>
+              <li>
+                <a class="color-6" title="Pink Theme" onclick="changeColor('#fc3d6a')"></a>
+              </li>
+              <li>
+                <a class="color-7" title="Blue Theme" onclick="changeColor('#4f6df5')"></a>
+              </li>
+              <li>
+                <a class="color-8"  title="Purple Theme" onclick="changeColor('#570be1')"></a>
+              </li>
+            </ul></div></div>
     </div>
     <!-- Theme -->
     <!-- Start Home -->
@@ -473,7 +439,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="images/building-01.jpg"
+              src="images/home-01.jpg"
               style="height: 390px"
               class="d-block w-100 image"
               alt="..."

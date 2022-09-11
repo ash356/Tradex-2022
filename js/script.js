@@ -27,7 +27,17 @@ $(document).ready(function () {
   });
 });
 // End owl-carousel
-// Display Of Icon While Scrolling 
+// Switch Position
+var header = document.querySelector(".bottom");
+window.addEventListener("scroll", function () {
+  if (this.document.documentElement.scrollTop > 0) {
+    header.style.setProperty("position", "fixed");
+  } else {
+    header.style.setProperty("position", "sticky");
+  }
+});
+// Switch Position
+// Display Of Icon While Scrolling
 var topButton = document.querySelector(".icon-top");
 window.addEventListener("scroll", function () {
   if (this.document.documentElement.scrollTop > 250) {
@@ -47,50 +57,49 @@ function changeColor(color) {
 }
 var button = document.querySelector(".change");
 var box = document.querySelector(".theme-box");
-function showColors(){
-  if(button.style.right == "-40px"){
+function showColors() {
+  if (button.style.right == "-40px") {
     button.style.setProperty("right", "-280px");
     box.style.setProperty("display", "block");
-  }
-  else{
+  } else {
     button.style.setProperty("right", "-40px");
     box.style.setProperty("display", "none");
-  } 
+  }
 }
 // End Change Color Method
 // Scrolling Progress
 const scrollProgressElement = document.getElementById("scroll-progress");
-      function scrollProgress() {
-        const totalHeightofWebPage = document.body.scrollHeight;
-        const currentDistanceFromTop = document.documentElement.scrollTop;
-        const windowHeight = document.documentElement.clientHeight;
-        const scrollPercentage = (currentDistanceFromTop / (totalHeightofWebPage - windowHeight)) * 100;
-        scrollProgressElement.style.width= Math.round(scrollPercentage) + '%';
-        // console.log(totalHeightofWebPage)
-        // console.log(currentDistanceFromTop)
-        // console.log(windowHeight)
-        // console.log(scrollPercentage)
-        // console.log(Math.round(scrollPercentage))
-        // console.log("---------------")
-      }
+function scrollProgress() {
+  const totalHeightofWebPage = document.body.scrollHeight;
+  const currentDistanceFromTop = document.documentElement.scrollTop;
+  const windowHeight = document.documentElement.clientHeight;
+  const scrollPercentage =
+    (currentDistanceFromTop / (totalHeightofWebPage - windowHeight)) * 100;
+  scrollProgressElement.style.width = Math.round(scrollPercentage) + "%";
+  // console.log(totalHeightofWebPage)
+  // console.log(currentDistanceFromTop)
+  // console.log(windowHeight)
+  // console.log(scrollPercentage)
+  // console.log(Math.round(scrollPercentage))
+  // console.log("---------------")
+}
 document.addEventListener("scroll", scrollProgress);
 // Scrolling Progress
-// Counter 
-const numbers =document.querySelectorAll(".number");
-      numbers.forEach((num)=>{
-        const incrementCounter = ()=> {
-          const targetNumber = num.getAttribute('data-target-number');
-          const currentNumber = parseInt(num.innerText);
-          // console.log(targetNumber);
-          // console.log(currentNumber);
-          if(currentNumber < targetNumber){
-            num.innerText = Math.floor(currentNumber + targetNumber / 10);
-            setTimeout(incrementCounter , 100);
-          }
-          else{
-            num.innerText = targetNumber;
-          }
-        };
-        incrementCounter();
-      });
-// Counter 
+// Counter
+const numbers = document.querySelectorAll(".number");
+numbers.forEach((num) => {
+  const incrementCounter = () => {
+    const targetNumber = num.getAttribute("data-target-number");
+    const currentNumber = parseInt(num.innerText);
+    // console.log(targetNumber);
+    // console.log(currentNumber);
+    if (currentNumber < targetNumber) {
+      num.innerText = Math.floor(currentNumber + targetNumber / 20);
+      setTimeout(incrementCounter, 100);
+    } else {
+      num.innerText = targetNumber;
+    }
+  };
+  incrementCounter();
+});
+// Counter

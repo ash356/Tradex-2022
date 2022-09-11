@@ -10,8 +10,8 @@ body {
     background-color: #1a1a1a !important;
 }
 :root{
-    --main-blue-color:#0c65ed;
-    --color-02:#1abc9c;
+    --main-blue-color:#1abc9c;
+    --color-02:#0c65ed;
     --color-03:#ff784b;
     --color-04:#f12d2d;
     --color-05:#6cc000;
@@ -148,7 +148,7 @@ li{
     border-radius: 50%;
 }
 .theme ul  li .color-1 {
-    background-color: #0c65ed;
+    background-color: #1abc9c;
 }
 .theme ul  li .color-2 {
     background-color: var(--color-02);
